@@ -2,8 +2,12 @@
   <div id="app">
     <NavbarComponentVue/>
     <BreadcumbComponentVue/>
-    <GalleryComponentVue/>
-    <SliderComponentVue/>
+    <GalleryComponentVue 
+    :mainImageProps="mainImage"
+    :mainTitleProps="mainTitle"
+    :mainPriceProps="mainPrice"
+    :stylingProps="styling"/>
+    <SliderComponentVue @changePicture="changePictureFunc"/>
     <FooterComponentVue/>
     <CopyrightComponentVue/>
   </div>
@@ -28,6 +32,28 @@ export default {
     FooterComponentVue,
     CopyrightComponentVue,
   },
+
+  methods: {
+    changePictureFunc(cardImage,cardTitle,cardPrice){
+      this.mainImage = cardImage
+      this.mainTitle = cardTitle
+      this.mainPrice = cardPrice
+      this.styling = { 
+        width: 560 + "px", 
+        height: 609 + "px"
+      }
+      // alert(cardImage)
+    }
+  },
+
+  data() {
+    return {
+      mainImage: "chair",
+      mainTitle: "Chair Thatty",
+      mainPrice: "12.000.000", 
+      styling: null
+    }
+  }
 }
 </script>
 

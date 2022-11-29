@@ -14,11 +14,15 @@
                         class="side border-rounded"></a>
             </div>
             <div class="mr-5 ml-3">
-                <img id="preview" src="../assets/images/chair.png" alt="chair" class="border-rounded">
+                <img id="preview" 
+                :src="require('@/assets/images/' + mainImageProps + '.png')" 
+                :style="stylingProps"
+                alt="chair" 
+                class="border-rounded">
             </div>
             <div class="mr-5">
-                <h2 id="name">Chair Thatty</h2>
-                <p id="price">IDR 12.000.000</p>
+                <h2 id="name">{{ mainTitleProps }}</h2>
+                <p id="price">IDR {{ mainPriceProps }}</p>
                 <a href="shipping.html"><button type="button"
                         class="btn border-rounded mb-3 bg-pink border-0 px-4 py-2 d-flex align-items-center">
                         <img src="../assets/images/cart-icon.svg" alt="button-cart"> Add to
@@ -44,6 +48,13 @@
 
 export default {
     name: 'GalleryComponent',
+
+    props: [
+        "mainImageProps",
+        "mainTitleProps",
+        "mainPriceProps",
+        "stylingProps"
+    ]
 }
 </script>
 
