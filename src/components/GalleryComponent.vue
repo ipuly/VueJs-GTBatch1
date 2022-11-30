@@ -23,11 +23,11 @@
             <div class="mr-5">
                 <h2 id="name">{{ mainTitleProps }}</h2>
                 <p id="price">IDR {{ mainPriceProps }}</p>
-                <a href="shipping.html"><button type="button"
+                <router-link to="/shipping"><button type="button"
                         class="btn border-rounded mb-3 bg-pink border-0 px-4 py-2 d-flex align-items-center">
                         <img src="../assets/images/cart-icon.svg" alt="button-cart"> Add to
                         Chart</button>
-                </a>
+                </router-link>
                 <hr>
                 <h6 class="mt-4 mb-2">About the product:</h6>
                 <p>Tailored to a level of perfection synonymous with that

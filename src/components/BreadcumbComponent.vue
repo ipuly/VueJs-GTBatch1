@@ -1,11 +1,14 @@
 <template>
     <div>
         <div class="d-flex px-5 py-4 bg-light">
-            <a href="index.html" class="text-dark mr-3">Home</a>
+            <a href="#" class="text-dark mr-3">Home</a>
             <span class="text-secondary mr-3">/</span>
             <a href="#" class="text-dark mr-3">Office Room</a>
             <span class="text-secondary mr-3">/</span>
-            <a href="detail.html" class="text-dark mr-3"><strong>Details</strong></a>
+            <router-link to="/detail" class="text-dark mr-3 font-weight-bold" v-show="routeName == 'detail'" >Details</router-link>
+            <router-link to="/detail" class="text-dark mr-3" v-show="routeName == 'shipping'">Details</router-link>
+            <span class="text-secondary mr-3" v-show="routeName == 'shipping'"  >/</span>
+            <router-link to="/shipping" class="text-dark mr-3 font-weight-bold" v-show="routeName == 'shipping'">Shipping</router-link>
         </div>
     </div>
 </template>
@@ -14,6 +17,11 @@
 
 export default {
     name: 'BreadcumbComponent',
+    computed: {
+        routeName() {
+            return this.$route.name
+        },
+    }
 }
 </script>
 
