@@ -1,17 +1,15 @@
 <template>
-    <div>
+    <div id="galery" >
         <div class="d-flex justify-content-center p-5">
             <div class="d-flex flex-column justify-content-between">
-                <a href="#" class="side"><img src="../assets/images/side-1.png" alt="side-1"
-                        class="side border-rounded"></a>
-                <a href="#" class="side"><img src="../assets/images/side-2.png" alt="side-2"
-                        class="side border-rounded"></a>
-                <a href="#" class="side"><img src="../assets/images/side-3.png" alt="side-3"
-                        class="side border-rounded"></a>
-                <a href="#" class="side"><img src="../assets/images/side-1.png" alt="side-4"
-                        class="side border-rounded"></a>
-                <a href="#" class="side"><img src="../assets/images/side-2.png" alt="side-5"
-                        class="side border-rounded"></a>
+                <a 
+                href="" class="side"
+                v-for="(side,index) in arrSideProps" :key="index" @click.prevent="arrSideProps=index"
+                >
+                <img 
+                :src="require('@/assets/images/'+ side +'.png')" alt="side" class="side border-rounded"
+                >
+            </a>
             </div>
             <div class="mr-5 ml-3">
                 <img id="preview" 
@@ -53,8 +51,21 @@ export default {
         "mainImageProps",
         "mainTitleProps",
         "mainPriceProps",
-        "stylingProps"
-    ]
+        "stylingProps",
+        "sideProps"
+    ],
+
+    data() {
+        return {
+            arrSideProps: [
+                "side-1",
+                "side-2",
+                "side-3",
+                "side-1",
+                "side-2"
+            ],
+        }
+    },
 }
 </script>
 

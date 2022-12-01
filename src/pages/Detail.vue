@@ -2,8 +2,12 @@
     <div>
         <NavbarComponentVue />
         <BreadcumbComponentVue />
-        <GalleryComponentVue :mainImageProps="mainImage" :mainTitleProps="mainTitle" :mainPriceProps="mainPrice"
-            :stylingProps="styling" />
+        <GalleryComponentVue 
+        :mainImageProps="mainImage" 
+        :mainTitleProps="mainTitle" 
+        :mainPriceProps="mainPrice"
+        :stylingProps="styling"
+        />
         <SliderComponentVue @changePicture="changePictureFunc" />
         <FooterComponentVue />
         <CopyrightComponentVue />
@@ -35,10 +39,15 @@ export default {
             this.mainImage = cardImage
             this.mainTitle = cardTitle
             this.mainPrice = cardPrice
+            
             this.styling = {
                 width: 560 + "px",
                 height: 609 + "px"
             }
+
+            const galerySection = document.getElementById('SectionTop');
+            galerySection.scrollIntoView({ behavior: 'smooth' });
+            
             // alert(cardImage)
         }
     },
@@ -48,7 +57,7 @@ export default {
             mainImage: "chair",
             mainTitle: "Chair Thatty",
             mainPrice: "12.000.000",
-            styling: null
+            styling: null,
         }
     }
 }
@@ -57,6 +66,7 @@ export default {
 <style>
 .border-rounded {
     border-radius: 20px;
+    box-shadow: 5px;
 }
 
 .bg-pink {
