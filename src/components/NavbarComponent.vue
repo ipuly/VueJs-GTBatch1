@@ -7,17 +7,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav ">
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="#">Showcase</a>
+        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Home">
+          <router-link to="/home" class="nav-link text-dark" >Home</router-link>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="#">Catalog</a>
+        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Products">
+          <router-link to="/detail" class="nav-link text-dark">Products</router-link>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="#">Delivery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="#">Rewards</a>
+        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Shiiping List">
+          <router-link to="/shippinglist" class="nav-link text-dark">Shipping List</router-link>
         </li>
         <li class="nav-item">
           <div>
